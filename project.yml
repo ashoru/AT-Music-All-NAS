@@ -1,0 +1,59 @@
+name: ATMusic
+
+options:
+  deploymentTarget:
+    iOS: "16.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+
+targets:
+  ATMusic:
+    type: application
+    platform: iOS
+    sources: [ATMusic]
+    resources:
+      - ATMusic/en.lproj
+      - ATMusic/zh-Hans.lproj
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.atmusic.player
+        MARKETING_VERSION: "1.9.47"
+        CURRENT_PROJECT_VERSION: "148"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SWIFT_OBJC_BRIDGING_HEADER: ATMusic/ATMusic-Bridging-Header.h
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    info:
+      path: ATMusic/Info.plist
+      properties:
+        CFBundleDisplayName: AT Music
+        CFBundleName: AT Music
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UIBackgroundModes: [audio]
+        UILaunchScreen:
+          UIColorName: LaunchBackgroundColor
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        "UISupportedInterfaceOrientations~ipad":
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UIFileSharingEnabled: true
+        LSSupportsOpeningDocumentsInPlace: true
+        CADisableMinimumFrameDurationOnPhone: true
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoads: true
+        NSLocalNetworkUsageDescription: "需要访问局域网以发现和连接您的群晖 NAS 设备"
+
+schemes:
+  ATMusic:
+    build:
+      targets:
+        ATMusic: all
+    run:
+      config: Debug
+    archive:
+      config: Release

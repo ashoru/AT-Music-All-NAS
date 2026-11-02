@@ -1,0 +1,59 @@
+build/
+build_temp/
+ci-logs/
+.DS_Store
+version.txt
+*.ipa
+*.sha256
+Payload/
+Payload.ipa
+work/
+backup*/
+docs/backup_*/
+/_*.swift
+/_*.py
+/_*.ps1
+/_*.js
+/_*.txt
+
+# Local / CI generated
+DerivedData/
+dist/
+*.xcarchive
+xcodegen/
+**/xcuserdata/
+*.xcuserstate
+*.xcworkspace
+
+# Signing / local secrets
+*.mobileprovision
+*.p12
+*.p8
+*.cer
+*.pem
+*.key
+*.certSigningRequest
+*.keystore
+.env
+.env.*
+!.env.example
+Signing.xcconfig
+*.xcconfig.local
+
+# Never commit signing material or exported archives.
+# A certificate bundle was once published here by mistake.
+*.zip
+*.rar
+*.7z
+
+# Handover docs carry device UDIDs / Team IDs
+docs/HANDOVER_*
+
+# Local CI / generated tool archives
+xcodebuild.log
+release_body.md
+
+# 本地发布凭据（绝不入库）
+.atmusic_github_token
+.secrets/
+*.token
